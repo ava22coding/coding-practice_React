@@ -10,12 +10,17 @@
     <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-  var list=[1,2,3,4,5]
-  var newList=[]
-  var newList=list.map((num)=>(num*3))
-  console.log(newList)
-</script>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Custom(props){
+        return <h1>Hello World</h1>
+      }
+      const element = <Custom />
+      // 컴포넌트를 만드는 두가지 방법
+      // 1. 한줄 두줄은 function으로 만들고, 
+      // 2. 내용이 많은 것들은 class로 만들기
+      const root = document.getElementById('root')
+        ReactDOM.render(element,root)
+    </script>
 </body>
 </html>

@@ -10,12 +10,24 @@
     <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-  var list=[1,2,3,4,5]
-  var newList=[]
-  var newList=list.map((num)=>(num*3))
-  console.log(newList)
-</script>
+    <div id="root"></div>
+    <script type="text/babel">
+      class Test extends React.Component{
+        a=10
+        hello(){
+          return 20
+        }
+        render(){
+          // 클래스에서는 this를 꼭 붙여줘야함!!
+          alert(this.a)
+          alert(this.hello())
+
+          return <h1 style={{color:this.props.color}}>{this.props.children}</h1>
+        }
+      }
+      const element = <Test color="red">Hello Componenet</Test>
+      const root = document.getElementById('root')
+      ReactDOM.render(element,root)
+    </script>
 </body>
 </html>

@@ -10,12 +10,24 @@
     <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-  var list=[1,2,3,4,5]
-  var newList=[]
-  var newList=list.map((num)=>(num*3))
-  console.log(newList)
-</script>
+    <div id="root"></div>
+    <script type="text/babel">
+      // ES6최신기술인데 바벨을 통해서 범용적인 스크립트로 변환
+      // React는 IE9이상은 돌아감
+      var a = 1
+      const b = 2
+      // const는 수정불가
+      let c = 3
+      // var와 비슷
+      b=3
+      var a = 1
+      a = 5
+      var i = 15
+      for(let i = 0; i<=10; i++){
+        console.log(i)
+      }
+      // var i로 지정한것과 상관없이 for문 내의 i 를 지정할 때 let 사용
+      console.log(i)
+    </script>
 </body>
 </html>

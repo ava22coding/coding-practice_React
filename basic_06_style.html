@@ -10,12 +10,20 @@
     <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-  var list=[1,2,3,4,5]
-  var newList=[]
-  var newList=list.map((num)=>(num*3))
-  console.log(newList)
-</script>
+    <div id="root"></div>
+    <script type="text/babel">
+      // 1. 콘텐츠를 코드로 넣을 떄 : {}
+      // 2. 속성을 코드로 넣을 때 : title={코드}
+      // 3. style을 코드로 넣을 떼 : style={객체} background-color => backgroundColor로 써야함
+      // 3-1. 바로 쓰는 경우에는 style={{color:'red'}} 괄호 두개
+      const str = 'Hello'
+      const customStyle={
+        color:'blue', textAlign:'center', backgroundColor:'yellow'
+      }
+      const element = <h1 title={str} style={customStyle}>{str} World</h1>
+      const root = document.getElementById('root')
+      ReactDOM.render(element,root)
+
+    </script>
 </body>
 </html>

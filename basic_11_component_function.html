@@ -10,12 +10,14 @@
     <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-  var list=[1,2,3,4,5]
-  var newList=[]
-  var newList=list.map((num)=>(num*3))
-  console.log(newList)
-</script>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Custom(props){
+        return <h1 style={{color:props.color}}>{props.title} World</h1>
+      }
+      const element = <Custom title='titleName' color='red' />
+      const root = document.getElementById('root')
+        ReactDOM.render(element,root)
+    </script>
 </body>
 </html>

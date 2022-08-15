@@ -10,12 +10,25 @@
     <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-  var list=[1,2,3,4,5]
-  var newList=[]
-  var newList=list.map((num)=>(num*3))
-  console.log(newList)
-</script>
+    <div id="root"></div>
+    <script type="text/babel">
+      const buttonStyle={padding:10,borderRadius:20}
+      function RoundButton(props){
+        return(
+          <button style={buttonStyle}>{props.children}</button>
+        )
+      }
+      const element=(
+        <div>
+          <RoundButton>새로운 버튼</RoundButton>
+          <RoundButton>새로운 버튼</RoundButton>
+          <RoundButton>새로운 버튼</RoundButton>
+          <RoundButton>새로운 버튼</RoundButton>
+          <RoundButton>새로운 버튼</RoundButton>
+        </div>
+      )
+      const root = document.getElementById('root')
+      ReactDOM.render(element,root)
+    </script>
 </body>
 </html>
