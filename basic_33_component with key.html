@@ -12,16 +12,21 @@
 <body>
 <div id="root"></div>
 <script type="text/babel">
-  var list=[1,2,3,4,5]
-  var newList=[]
-  var newList=list.map((num)=>(num*3))
-  // for문 사용
-  // for(let i =0;i<list.length;i++){
-  //   newList[i]=list[i]*2
-  // }
-  // function사용
-  // var newList=list.map(function(num){return num*2})
-  console.log(newList)
+ const list =[{id:1,name:'홍길동',age:30},{id:2,name:'홍길순',age:20},{id:'임꺽정',age:40}]
+ class List extends React.Component {
+  render(){
+    const itemList = this.props.list.map((item,index)=>(
+      <li key={item.id}>
+        {/*key를 사용하면 react가 최적화하는데 도움*/}
+        {/*리스트데이터 순서가 바뀌면 index는 객체가 바뀌었다고 생각하기 떄문에 다시 그리게 됨, 그래서 재렌더링이 되어 속도문제가 나올 수 있음*/}
+        <p>이름:{item.name}</p>
+        <p>나이:{item.age}</p>
+      </li>
+    ))
+    return (<ul>{itemList}</ul>)
+  }
+ }
+  ReactDOM.render(<List list={list} />,document.getElementById('root'))
 </script>
 </body>
 </html>
